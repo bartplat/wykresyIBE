@@ -7,6 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "b.platkowski@ibe.edu.pl")
 Depends: R (>= 3.6), ggplot2 (>= 3.2.1), dplyr (>= 0.8.5)
+Imports: sf (>= 0.9-1)
 Description: Funkcje wspierające tworzenie specyficznych wykresów (np. map).
 License: MIT + file LICENSE
 Encoding: UTF-8
