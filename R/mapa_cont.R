@@ -21,15 +21,16 @@ mapa_powiat_cont = function(x, mapping, teryt_var) {
   stopifnot(is.data.frame(x),
             !is.list(mapping))
 
-  # spłaszczona ramka danych daje kolumny klasy hvnlbl
   x = x %>%
+  # spłaszczona ramka danych daje kolumny klasy hvnlbl
     mutate_if(is.numeric, as.numeric) %>% # zmieniam klasę na dbl
-    mutate_if(is.character, as.character) # zmieniam klasę na chr
+    mutate_if(is.character, as.character) %>% # zmieniam klasę na chr
+    mutate(teryt_recoded = teryt_recode_pow(!!teryt_var))
 
   get("powiatyShape")
   x = powiatyShape %>%
     left_join(x,
-              by = c("jpt_kod_je" = as_name(teryt_var)))
+              by = c("jpt_kod_je" = "teryt_recoded"))
 
   chart = ggplot(data = x) +
     geom_sf(aes(fill = !!mapping)) +
