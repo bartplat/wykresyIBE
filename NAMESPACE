@@ -2,10 +2,13 @@
 
 export(mapa_powiat_cont)
 export(mapa_woj_cont)
+importFrom(dplyr,"%>%")
 importFrom(dplyr,left_join)
+importFrom(dplyr,mutate)
 importFrom(dplyr,mutate_if)
 importFrom(ggplot2,ggplot)
 importFrom(rlang,as_name)
 importFrom(rlang,ensym)
+importFrom(sf,st_multipolygon)
 importFrom(stringr,str_length)
 importFrom(stringr,str_sub)
