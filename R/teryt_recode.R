@@ -4,18 +4,17 @@
 #' @param x kolumna zawierajaca numer teryt - trzeci argument funkcji
 #' \code{mapa_powiat_cont}
 #' @importFrom rlang ensym
-#' @importFrom stringr str_sub str_length
 teryt_recode_pow = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
-    if(any(str_length(x) == 7)) {
-      x = str_sub(x, end = -4)
+    if(any(nchar(x) == 7)) {
+      x = substr(x, start = 0, stop = 4)
       x = as.numeric(x)
       return(x)
-    } else if (any(str_length(x) == 6)) {
-      x = str_sub(x, end = -3)
+    } else if (any(nchar(x) == 6)) {
+      x = substr(x, start = 0, stop = 4)
       x = as.numeric(x)
-    } else if(any(str_length(x) == 4)) {
+    } else if(any(nchar(x) == 4)) {
       x = as.numeric(x)
       return(x)
     }
@@ -41,23 +40,22 @@ teryt_recode_pow = function(x) {
 #' @param x kolumna zawierajaca numer teryt - trzeci argument funkcji
 #' \code{mapa_woj_cont}
 #' @importFrom rlang ensym
-#' @importFrom stringr str_sub str_length
 teryt_recode_woj = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
-    if(any(str_length(x) == 7)) {
-      x = str_sub(x, end = -6)
+    if(any(nchar(x) == 7)) {
+      x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(str_length(x) == 6)) {
-      x = str_sub(x, end = -5)
+    } else if(any(nchar(x) == 6)) {
+      x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(str_length(x) == 4)) {
-      x = str_sub(x, end = -3)
+    } else if(any(nchar(x) == 4)) {
+      x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(str_length(x) == 2)) {
+    } else if(any(nchar(x) == 2)) {
       x = as.numeric(x)
       return(x)
     }

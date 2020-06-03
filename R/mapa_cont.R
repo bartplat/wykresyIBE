@@ -10,7 +10,8 @@
 #' wykresie
 #' @param teryt_var nazwa zmiennej zawierająca numer teryt powiatu w formie
 #' trzy- lub czterocyfrowej ze zbioru danych przekazanego do argumentu \code{x}
-#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 ggplot geom_sf aes scale_fill_distiller theme
+#' element_blank
 #' @importFrom dplyr left_join mutate_if mutate %>%
 #' @importFrom rlang ensym as_name
 #' @importFrom sf st_multipolygon
@@ -32,7 +33,7 @@ mapa_powiat_cont = function(x, mapping, teryt_var) {
     get("powiatyShape")
     x = powiatyShape %>%
       left_join(x,
-                by = c("jpt_kod_je" = "teryt_recoded"))
+                by = c("teryt" = "teryt_recoded"))
   }
   chart = ggplot(data = x) +
     geom_sf(aes(fill = !!mapping)) +
@@ -55,7 +56,8 @@ mapa_powiat_cont = function(x, mapping, teryt_var) {
 #' wykresie
 #' @param teryt_var nazwa zmiennej zawierająca numer teryt województwa w formie
 #' dwuocyfrowej ze zbioru danych przekazanego do argumentu \code{x}
-#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 ggplot geom_sf aes scale_fill_distiller theme
+#' element_blank
 #' @importFrom dplyr left_join mutate_if mutate %>%
 #' @importFrom rlang ensym as_name
 #' @importFrom sf st_multipolygon
@@ -77,7 +79,7 @@ mapa_woj_cont = function(x, mapping, teryt_var) {
   get("wojShape")
   x = wojShape %>%
     left_join(x,
-              by = c("jpt_kod_je" = "teryt_recoded"))
+              by = c("teryt" = "teryt_recoded"))
   }
   chart = ggplot(data = x) +
     geom_sf(aes(fill = !!mapping)) +
