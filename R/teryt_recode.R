@@ -7,27 +7,26 @@
 teryt_recode_pow = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
-    if(any(nchar(x) == 7)) {
+    if(any(nchar(x) %in% 7)) {
       x = substr(x, start = 0, stop = 4)
       x = as.numeric(x)
       return(x)
-    } else if (any(nchar(x) == 6)) {
+    } else if (any(nchar(x) %in% 6)) {
       x = substr(x, start = 0, stop = 4)
       x = as.numeric(x)
-    } else if(any(nchar(x) == 4)) {
+    } else if(any(nchar(x) %in% 4)) {
       x = as.numeric(x)
       return(x)
     }
   }
   else if (is.numeric(x)) {
-    # https://stackoverflow.com/questions/47190693/count-the-number-of-integer-digits
-    if(any(floor(log10(x)) + 1 == 7)) {
+    if(any(nchar(floor(x)) %in% 7)) {
       x = floor(x / 1000)
       return(x)
-    } else if(any(floor(log10(x)) + 1 == 6)) {
+    } else if(any(nchar(floor(x)) %in% 6)) {
       x = floor(x / 100)
       return(x)
-    } else if(any(floor(log10(x)) + 1 == 4)) {
+    } else if(any(nchar(floor(x)) %in% 4)) {
       return(x)
     }
   } else {
@@ -43,35 +42,34 @@ teryt_recode_pow = function(x) {
 teryt_recode_woj = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
-    if(any(nchar(x) == 7)) {
+    if(any(nchar(x) %in% 7)) {
       x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(nchar(x) == 6)) {
+    } else if(any(nchar(x) %in% 6)) {
       x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(nchar(x) == 4)) {
+    } else if(any(nchar(x) %in% 4)) {
       x = substr(x, start = 0, stop = 2)
       x = as.numeric(x)
       return(x)
-    } else if(any(nchar(x) == 2)) {
+    } else if(any(nchar(x) %in% 2)) {
       x = as.numeric(x)
       return(x)
     }
   }
   else if (is.numeric(x)) {
-    # https://stackoverflow.com/questions/47190693/count-the-number-of-integer-digits
-    if(any(floor(log10(x)) + 1 == 7)) {
+    if(any(nchar(floor(x)) %in% 7)) {
       x = floor(x / 100000)
       return(x)
-    } else if(any(floor(log10(x)) + 1 == 6)) {
+    } else if(any(nchar(floor(x)) %in% 6)) {
       x = floor(x / 10000)
       return(x)
-    } else if (any(floor(log10(x)) + 1 == 4)) {
+    } else if (any(nchar(floor(x)) %in% 4)) {
       x = floor(x / 100)
       return(x)
-    } else if(any(floor(log10(x)) + 1 == 2)) {
+    } else if(any(nchar(floor(x)) %in% 2)) {
       return(x)
     }
   } else {

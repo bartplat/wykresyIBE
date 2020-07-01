@@ -20,6 +20,8 @@ mapa_powiat_cont = function(x, mapping, teryt_var) {
   mapping = ensym(mapping)
   teryt_var = ensym(teryt_var)
 
+  if(any(is.na(.data$teryt_var))) warning("Zmienna zawierająca kody TERYT posiada braki danych - wartości zmiennej mapowanej dla tych brakujących wartości TERYTu nie zostaną pokazane na wykresie.", immediate. = TRUE)
+
   stopifnot(is.data.frame(x),
             !is.list(mapping))
 
@@ -68,6 +70,8 @@ mapa_woj_cont = function(x, mapping, teryt_var) {
 
   stopifnot(is.data.frame(x),
             !is.list(mapping))
+
+  if(any(is.na(.data$teryt_var))) warning("Zmienna zawierająca kody TERYT posiada braki danych - wartości zmiennej mapowanej dla tych brakujących wartości TERYTu nie zostaną pokazane na wykresie.")
 
   if(any(grepl("sf", class(x))) == FALSE) {
   # spłaszczona ramka danych daje kolumny klasy hvnlbl
