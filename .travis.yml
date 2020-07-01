@@ -1,0 +1,14 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+cache: packages
+r:
+  - release
+r_github_packages: befu14/wykresyIBE
+warnings_are_errors: false
+script:
+  - R CMD build .
+  - R CMD check *tar.gz --no-tests
+notifications:
+  email:
+    - b.platkowski@ibe.edu.pl
