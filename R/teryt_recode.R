@@ -3,7 +3,6 @@
 #' kompatybilny z funkcją łączącą zbiory i rysującą podstawowy wykres
 #' @param x kolumna zawierajaca numer teryt - trzeci argument funkcji
 #' \code{mapa_powiat_cont}
-#' @importFrom rlang ensym
 teryt_recode_pow = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
@@ -38,7 +37,6 @@ teryt_recode_pow = function(x) {
 #' kompatybilny z funkcją łączącą zbiory i rysującą podstawowy wykres
 #' @param x kolumna zawierajaca numer teryt - trzeci argument funkcji
 #' \code{mapa_woj_cont}
-#' @importFrom rlang ensym
 teryt_recode_woj = function(x) {
   if(is.character(x) | is.factor(x)) {
     x = as.character(levels(x)[x]) # konwertuję na character, bo na factorach nie działają funkcje z stringr
