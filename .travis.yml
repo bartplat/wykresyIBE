@@ -19,3 +19,9 @@ addons:
       - gdal-bin
       - libgdal1-dev
       - libproj-dev
+
+# for codecov
+r_packages:
+  - covr
+after_success:
+  - Rscript -e 'covr::codecov()'
