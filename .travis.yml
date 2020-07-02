@@ -12,3 +12,7 @@ script:
 notifications:
   email:
     - b.platkowski@ibe.edu.pl
+addons:
+  apt:
+    packages:
+      - libudunits2-dev
