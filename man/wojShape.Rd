@@ -4,12 +4,14 @@
 \name{wojShape}
 \alias{wojShape}
 \title{Kształty województw}
-\format{Ramka danych stworzona funkcją \code{read_sf}
+\format{
+Ramka danych stworzona funkcją \code{read_sf}
 \describe{
-  \item{jpt_kod_je}{kod teryt województwa w formacie dwucyfrowym}
-  \item{jpt_nazwa_}{nazwy województw}
+  \item{teryt}{kod teryt województwa w formacie dwucyfrowym}
+  \item{nazwa}{nazwy województw}
   \item{geometry}{kształty województw potrzebne do narysowania mapy}
- }}
+ }
+}
 \usage{
 wojShape
 }

@@ -5,15 +5,15 @@
 \title{Mapa z terytorialnym rozkładem \strong{zmiennej ciągłej} na poziomie
 województw}
 \usage{
-mapa_woj_cont(x, mapping, var)
+mapa_woj_cont(x, mapping, teryt_var)
 }
 \arguments{
 \item{x}{ramka danych ze wskaźnikami zagregowanymi na poziomie województw}
 
-\item{mapping}{nazwa zmiennej wpisana jako string, która ma być przedstawiona
-na wykresie}
+\item{mapping}{nazwa zmiennej, której rozkład ma być przedstawiony na
+wykresie}
 
-\item{var}{nazwa zmiennej zawierająca numer teryt województwa w formie
+\item{teryt_var}{nazwa zmiennej zawierająca numer teryt województwa w formie
 dwuocyfrowej ze zbioru danych przekazanego do argumentu \code{x}}
 }
 \description{

@@ -4,12 +4,14 @@
 \name{powiatyShape}
 \alias{powiatyShape}
 \title{Kształty powiatów}
-\format{Ramka danych stworzona funkcją \code{read_sf}
+\format{
+Ramka danych stworzona funkcją \code{read_sf}
 \describe{
-  \item{jpt_kod_je}{kod teryt powiatu w formacie czterocyfrowym}
-  \item{jpt_nazwa_}{nazwy powiatów}
+  \item{teryt}{kod teryt powiatu w formacie czterocyfrowym}
+  \item{nazwa}{nazwy powiatów}
   \item{geometry}{kształty powiatów potrzebne do narysowania mapy}
- }}
+ }
+}
 \usage{
 powiatyShape
 }
