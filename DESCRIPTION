@@ -1,14 +1,20 @@
 Package: wykresyIBE
-Title: Funkcje wspierające tworzenie specyficznych wykresów
-Version: 0.0.0.9000
+Title: Funkcje wspierające tworzenie wykresów na potrzeby IBE
+Version: 0.1.0
 Authors@R: 
     person(given = "Bartlomiej",
            family = "Platkowski",
            role = c("aut", "cre"),
            email = "b.platkowski@ibe.edu.pl")
-Depends: R (>= 3.6), ggplot2 (>= 3.2.1)
-Imports: sf (>= 0.9-1), dplyr (>= 0.8.5), rlang (>= 0.4.5)
-Description: Funkcje wspierające tworzenie specyficznych wykresów (np. map).
+Depends:
+  R (>= 3.6),
+  ggplot2 (>= 3.2.1)
+Imports:
+  sf (>= 0.9-1),
+  dplyr (>= 0.8.5),
+  rlang (>= 0.4.5)
+Description: Funkcje wspierające tworzenie wykresów w formie map. Pakiet
+obsługuje łączenie prezentowanych danych z kształtami poziomów agragacji.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
