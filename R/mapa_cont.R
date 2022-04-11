@@ -133,8 +133,7 @@ mapa_gmina_cont = function(x, mapping, teryt_var) {
     # spłaszczona ramka danych daje kolumny klasy hvnlbl
     x = x %>%
       mutate_if(is.numeric, as.numeric) %>% # zmieniam klasę na dbl
-      mutate_if(is.character, as.character) %>% # zmieniam klasę na chr
-      mutate(teryt_recoded = teryt_recode_woj(!!teryt_var))
+      mutate_if(is.character, as.character) # zmieniam klasę na chr
 
     get("gmiShape")
     x = gmiShape %>%
