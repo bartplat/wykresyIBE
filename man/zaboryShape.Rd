@@ -15,7 +15,7 @@ Ramka danych w formacie \code{data.frame}
 zaboryShape
 }
 \description{
-Ramka danych zawierająca kształty zaborów. KonturóW można używać
+Ramka danych zawierająca kształty zaborów. Konturów można używać
 do nakładania nowej warstwy na wykres (np. granic zaborów w postaci konturu
 lub wypełnienia kolorem z parametrem przezroczystości \code{alpha})
 }
