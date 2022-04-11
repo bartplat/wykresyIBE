@@ -92,3 +92,14 @@
 #'   odzyskane}
 #'  }
 "zaboryZOShape"
+#' @title Kształty gmin
+#' @description Ramka danych zawierająca kształty gmin wymagane do rysowania
+#' map oraz informacje potrzebne do zidentyfikowania gmin takie, jak kod teryt,
+#' nazwy gmin itd.
+#' @format Ramka danych stworzona funkcją \code{read_sf}
+#' \describe{
+#'   \item{teryt}{kod teryt gminy w formacie czterocyfrowym}
+#'   \item{nazwa}{nazwy gmin}
+#'   \item{geometry}{kształty gmin potrzebne do narysowania mapy}
+#'  }
+"gmiShape"
