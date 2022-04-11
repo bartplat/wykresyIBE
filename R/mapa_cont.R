@@ -133,12 +133,13 @@ mapa_gmina_cont = function(x, mapping, teryt_var) {
     # spłaszczona ramka danych daje kolumny klasy hvnlbl
     x = x %>%
       mutate_if(is.numeric, as.numeric) %>% # zmieniam klasę na dbl
-      mutate_if(is.character, as.character) # zmieniam klasę na chr
+      mutate_if(is.character, as.character) %>% # zmieniam klasę na chr
+      rename(teryt = !!teryt_var)
 
     get("gmiShape")
     x = gmiShape %>%
       left_join(x,
-                by = c("teryt" = "teryt_recoded"))
+                by = "teryt")
     message(paste("- Dołączono do zbioru", sum(!is.na(x[[mapping]])), "niepustych obserwacji\n"))
   }
   chart = ggplot(data = x) +
