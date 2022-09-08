@@ -13,8 +13,7 @@ Imports:
     sf (>= 0.9-1),
     dplyr (>= 0.8.5),
     rlang (>= 0.4.5)
-Description: Funkcje wspierające tworzenie wykresów w formie map. Pakiet 
-    obsługuje łączenie prezentowanych danych z kształtami poziomów agragacji.
+Description: Funkcje wspierające tworzenie wykresów w formie map. Pakiet obsługuje łączenie prezentowanych danych z kształtami poziomów agragacji.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
