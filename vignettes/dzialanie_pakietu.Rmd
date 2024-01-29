@@ -1,0 +1,19 @@
+---
+title: "Działanie pakietu `wykresyIBE`"
+subtitle: "Podstawy użytkowania"
+author: "Bartłomiej Płatkowski"
+date: "27 sierpnia 2020"
+lang: pl
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Działanie pakietu `wykresyIBE`}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# 1. Wprowadzenie
+
+Pakiet `wykresyIBE` w obecnej wersji służy do rysowania prostych map, które pokazują rozkład zmiennej ciągłej lub dyskretnej. Zmienne można przedstawiać na wykresach w podziale na powiaty lub na województwa. Ponadto, na tak skonstruowany wykres można nałożyć dodatkowe warstwy, do których można dodawać/modyfikować elementy, żeby wykresy wyglądały ładniej. 
+
+Pakiet ma za zadanie zdjąć z użytkownika obowiązek znalezienia i załadowania shape'ów oraz dołączenia do nich zbioru danych, co w efekcie daje nam zbiór, z którego ggplot będzie w stanie narysować mapę.
+
